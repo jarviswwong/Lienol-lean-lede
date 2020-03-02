@@ -10,6 +10,9 @@
 name: OpenWrt-CI
 
 on:
+  push:
+    branches: 
+      - dev-lean-lede
   schedule:
     - cron: 0 20 * * *
 
@@ -23,7 +26,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
         with:
-          ref: master
+          ref: dev-lean-lede
 
       - name: Space cleanup
         env:
