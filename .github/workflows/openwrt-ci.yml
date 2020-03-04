@@ -79,9 +79,9 @@ jobs:
           # 
           # 编译x64固件:
           cat >> .config <<EOF
-          CONFIG_TARGET_x86=y
-          CONFIG_TARGET_x86_64=y
-          CONFIG_TARGET_x86_64_Generic=y
+          CONFIG_TARGET_armvirt=y
+          CONFIG_TARGET_armvirt_64=y
+          CONFIG_TARGET_armvirt_64_Default=y
           EOF
           # 固件压缩, 编译ext4格式固件
           cat >> .config <<EOF
@@ -108,30 +108,30 @@ jobs:
           CONFIG_PACKAGE_kmod-fs-squashfs=y
           EOF
           # USB3.0支持:
-          cat >> .config <<EOF
-          CONFIG_PACKAGE_kmod-usb-ohci=y
-          CONFIG_PACKAGE_kmod-usb-ohci-pci=y
-          CONFIG_PACKAGE_kmod-usb2=y
-          CONFIG_PACKAGE_kmod-usb2-pci=y
-          CONFIG_PACKAGE_kmod-usb3=y
-          EOF
+          # cat >> .config <<EOF
+          # CONFIG_PACKAGE_kmod-usb-ohci=y
+          # CONFIG_PACKAGE_kmod-usb-ohci-pci=y
+          # CONFIG_PACKAGE_kmod-usb2=y
+          # CONFIG_PACKAGE_kmod-usb2-pci=y
+          # CONFIG_PACKAGE_kmod-usb3=y
+          # EOF
           # 常用LuCI插件选择, 主要定制passwall与ssr-plus
           cat >> .config <<EOF
-          CONFIG_PACKAGE_luci-app-adbyby-plus=y
-          CONFIG_PACKAGE_luci-app-aria2=y
-          CONFIG_PACKAGE_luci-app-baidupcs-web=y
-          CONFIG_PACKAGE_luci-app-docker=y
-          CONFIG_PACKAGE_luci-app-frpc=y
-          CONFIG_PACKAGE_luci-app-kodexplorer=y
-          CONFIG_PACKAGE_luci-app-minidlna=y
-          CONFIG_PACKAGE_luci-app-openvpn=y
-          CONFIG_PACKAGE_luci-app-openvpn-server=y
+          # CONFIG_PACKAGE_luci-app-adbyby-plus=y
+          # CONFIG_PACKAGE_luci-app-aria2=y
+          # CONFIG_PACKAGE_luci-app-baidupcs-web=y
+          # CONFIG_PACKAGE_luci-app-docker=y
+          # CONFIG_PACKAGE_luci-app-frpc=y
+          # CONFIG_PACKAGE_luci-app-kodexplorer=y
+          # CONFIG_PACKAGE_luci-app-minidlna=y
+          # CONFIG_PACKAGE_luci-app-openvpn=y
+          # CONFIG_PACKAGE_luci-app-openvpn-server=y
           CONFIG_PACKAGE_luci-app-passwall=y
           CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ipt2socks=y
           # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks is not set
           CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR=y
           # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_socks is not set
-          # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR_socks is not set
+          CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR_socks=y
           CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray=y
           CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Trojan=y
           CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Brook=y
@@ -142,7 +142,7 @@ jobs:
           CONFIG_PACKAGE_luci-app-passwall_INCLUDE_dns2socks=y
           # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_v2ray-plugin is not set
           # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_simple-obfs is not set
-          CONFIG_PACKAGE_luci-app-qbittorrent=y
+          # CONFIG_PACKAGE_luci-app-qbittorrent=y
           CONFIG_PACKAGE_luci-app-ssr-plus=y
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Simple_obfs=y
@@ -152,19 +152,19 @@ jobs:
           # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun is not set
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Server=y
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
-          CONFIG_PACKAGE_luci-app-ttyd=y
+          # CONFIG_PACKAGE_luci-app-ttyd=y
           CONFIG_PACKAGE_luci-app-v2ray-server=y
-          CONFIG_PACKAGE_luci-app-verysync=y
-          CONFIG_PACKAGE_luci-app-webadmin=y
-          CONFIG_PACKAGE_luci-app-wireguard=y
-          CONFIG_PACKAGE_luci-app-wrtbwmon=y
+          # CONFIG_PACKAGE_luci-app-verysync=y
+          # CONFIG_PACKAGE_luci-app-webadmin=y
+          # CONFIG_PACKAGE_luci-app-wireguard=y
+          # CONFIG_PACKAGE_luci-app-wrtbwmon=y
           EOF
           # LuCI主题:
           cat >> .config <<EOF
-          CONFIG_PACKAGE_luci-theme-argon-dark-mod=y
-          CONFIG_PACKAGE_luci-theme-argon-light-mod=y
-          CONFIG_PACKAGE_luci-theme-material=y
-          CONFIG_PACKAGE_luci-theme-netgear=y
+          # CONFIG_PACKAGE_luci-theme-argon-dark-mod=y
+          # CONFIG_PACKAGE_luci-theme-argon-light-mod=y
+          # CONFIG_PACKAGE_luci-theme-material=y
+          # CONFIG_PACKAGE_luci-theme-netgear=y
           EOF
           # 常用软件包:
           cat >> .config <<EOF
